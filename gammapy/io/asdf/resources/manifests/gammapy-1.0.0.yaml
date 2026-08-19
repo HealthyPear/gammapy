@@ -26,3 +26,5 @@ tags:
   schema_uri: asdf://gammapy.org/gammapy/schemas/maps/regionndmap-1.0.0
 - tag_uri: asdf://gammapy.org/gammapy/tags/maps/maps-1.0.0
   schema_uri: asdf://gammapy.org/gammapy/schemas/maps/maps-1.0.0
+- tag_uri: asdf://gammapy.org/gammapy/tags/data/gti-1.0.0
+  schema_uri: asdf://gammapy.org/gammapy/schemas/data/gti-1.0.0
