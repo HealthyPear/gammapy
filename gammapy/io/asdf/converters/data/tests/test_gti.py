@@ -15,7 +15,7 @@ time_ref = Time("2010-01-01", scale="tt")
 
 
 def test_gti_roundtrip(tmp_path):
-    file_path = tmp_path / "test.gti"
+    file_path = tmp_path / "test.asdf"
     times = {
         "START": time_ref + [5, 6, 1, 2] * u.s,
         "STOP": time_ref + [8, 7, 3, 4] * u.s,
