@@ -17,8 +17,8 @@ time_ref = Time("2010-01-01", scale="tt")
 def test_gti_roundtrip(tmp_path):
     file_path = tmp_path / "test.asdf"
     times = {
-        "START": time_ref + [5, 6, 1, 2] * u.s,
-        "STOP": time_ref + [8, 7, 3, 4] * u.s,
+        "START": time_ref + [1, 5, 10, 15] * u.s,
+        "STOP": time_ref + [3, 7, 14, 20] * u.s,
     }
     gti = GTI(Table(times), reference_time=time_ref)
 
@@ -28,6 +28,8 @@ def test_gti_roundtrip(tmp_path):
 
     with asdf.open(file_path) as af:
         result = af["gti"]
+        assert isinstance(result.time_start, Time)
+        assert isinstance(result.time_stop, Time)
         assert_time_allclose(result.time_start, gti.time_start)
         assert_time_allclose(result.time_stop, gti.time_stop)
         assert_time_allclose(result.time_ref, gti.time_ref)
