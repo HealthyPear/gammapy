@@ -23,5 +23,5 @@ jobs:
       - name: slack notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_CI_WEBHOOK }}
           SLACK_MESSAGE: 'nightly wheel build failed'
